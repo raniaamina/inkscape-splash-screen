@@ -1,0 +1,26 @@
+[Desktop Entry]
+Version=1.0
+Name=Inkscape
+Name[id]=Inkscape
+GenericName=Vector Graphics Editor
+GenericName[id]=Penyunting Grafik Vektor
+X-GNOME-FullName=Inkscape Vector Graphics Editor
+X-GNOME-FullName[id]=Penyunting Grafik Vektor Inkscape
+Comment=Create and edit Scalable Vector Graphics images
+Comment[id]=Membuat dan mengedit gambar Scalable Vector Graphics
+Type=Application
+Categories=Graphics;VectorGraphics;GTK;
+MimeType=image/svg+xml;image/svg+xml-compressed;application/vnd.corel-draw;image/x-eps;application/illustrator;
+Exec=python3 /home/rania/.config/inkscape/splash/splash_wrapper.py
+TryExec=inkscape
+Terminal=false
+StartupNotify=true
+Icon=inkscape
+X-Ayatana-Desktop-Shortcuts=Drawing
+
+Name[id_ID]=Inkscape
+
+[Drawing Shortcut Group]
+Name=New Drawing
+Exec=inkscape
+TargetEnvironment=Unity
