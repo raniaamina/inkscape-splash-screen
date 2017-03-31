@@ -12,10 +12,9 @@ do
     case $opt in
         "Install")
             echo "Install option selected!"
-            echo "Preparing area"
             echo "Installing dependencies"
 			sudo apt install -y git inkscape python3 wmctrl
-			echo "copying files"
+			echo "Copying files"
 			sudo git clone https://github.com/raniaamina/inkscape-splash-screen.git /opt/Inksplash
 			echo "Done!"
             break
@@ -46,10 +45,9 @@ do
             echo "Preparing area"
             sudo rm -rf /opt/Inksplash/*.py
 			sudo rm -rf /opt/Inksplash/*.png
-            echo "Installing dependencies"
-			sudo apt install -y git inkscape python3 wmctrl
+            echo "Copying files"
 			sudo cp /opt/Inksplash/solid-splash-screen/* /opt/Inksplash/
-			sudo sed -i "s/Exec=inkscape %F/Exec=\/opt\/Inksplash\/inksplash.py/" /usr/share/applications/inkscape.desktop
+			sudo sed -i "s/Exec=inkscape %F/Exec=python3\ /opt\/Inksplash\/inksplash.py/" /usr/share/applications/inkscape.desktop
             echo "Done!"
             break
             ;;
@@ -59,7 +57,7 @@ do
             sudo rm -rf /opt/Inksplash/*.py
 			sudo rm -rf /opt/Inksplash/*.png
             sudo cp /opt/Inksplash/transparent-splash-screen/* /opt/Inksplash/
-			sudo sed -i "s/Exec=inkscape %F/Exec=\/opt\/Inksplash\/inksplash.py/" /usr/share/applications/inkscape.desktop
+			sudo sed -i "s/Exec=inkscape %F/Exec=python3\ /opt\/Inksplash\/inksplash.py/" /usr/share/applications/inkscape.desktop
             echo "Done!"
             break
             ;;
