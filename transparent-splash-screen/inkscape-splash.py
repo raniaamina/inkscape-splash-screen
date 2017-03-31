@@ -1,3 +1,4 @@
+#!/usr/bin/env python
 """ Transparent, irregular edge splash screen with pyGTK and XShape.
 Takes a png image with transparent section, creates a window with pyGTK, puts this image in 
 there with cairo and then trims the edges with X11 XShape clipping extension.
@@ -21,7 +22,7 @@ import gobject
 class pngtranswin:
 	def __init__(self):
 		self.window = gtk.Window(gtk.WINDOW_TOPLEVEL)
-		
+		self.window.set_title("Running Inkscape")
 		self.window.set_decorated(0)
 		self.window.set_default_size(1366, 768)
 		
