@@ -45,20 +45,23 @@ do
             echo "Preparing area"
             sudo rm -rf /opt/Inksplash/*.py
 			sudo rm -rf /opt/Inksplash/*.png
+	        sudo sed -i "s/Exec=inkscape %F/Exec=\python3\ \/opt\/Inksplash\/inksplash.py/g" /usr/share/applications/inkscape.desktop
+	        #sudo sed -i "s/TryExec=inkscape/TryExec=\/opt\/Inksplash\/inksplash.py/g" /usr/share/applications/inkscape.desktop
             echo "Copying files"
-			sudo cp /opt/Inksplash/solid-splash-screen/* /opt/Inksplash/
-			sudo sed -i "s/Exec=inkscape %F/Exec=python3\ /opt\/Inksplash\/inksplash.py/" /usr/share/applications/inkscape.desktop
-            echo "Done!"
+	        sudo cp /opt/Inksplash/solid-splash-screen/* /opt/Inksplash/
+	        echo "Done!"
             break
             ;;
         "Transparent Splash")
             echo "Transparent Splash Screen Selected"
             echo "Preparing area"
             sudo rm -rf /opt/Inksplash/*.py
-			sudo rm -rf /opt/Inksplash/*.png
+            sudo rm -rf /opt/Inksplash/*.png
+            sudo sed -i "s/Exec=inkscape %F/Exec=\python3\ \/opt\/Inksplash\/inksplash.py/g" /usr/share/applications/inkscape.desktop
+            #sudo sed -i "s/TryExec=inkscape/TryExec=\/opt\/Inksplash\/inksplash.py/g" /usr/share/applications/inkscape.desktop
+            echo "Copying files"
             sudo cp /opt/Inksplash/transparent-splash-screen/* /opt/Inksplash/
-			sudo sed -i "s/Exec=inkscape %F/Exec=python3\ /opt\/Inksplash\/inksplash.py/" /usr/share/applications/inkscape.desktop
-            echo "Done!"
+	        echo "Done!"
             break
             ;;
         *) echo invalid option;;
