@@ -5,7 +5,7 @@ import time
 # set the application below
 application = "inkscape"
 # set the path to the splash script below
-path = "inkscape-splash.py"
+path = "/opt/Inksplash/init.py"
 
 subprocess.Popen([application])
 subprocess.Popen(["python", path])

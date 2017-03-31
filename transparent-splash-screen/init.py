@@ -3,7 +3,7 @@
 Takes a png image with transparent section, creates a window with pyGTK, puts this image in 
 there with cairo and then trims the edges with X11 XShape clipping extension.
 
-This file demonstrates a python script which loads a png image of size 800x650 and name inkscape-blankon.png
+This file demonstrates a python script which loads a png image of size 800x650 and name inkscape.png
 Then it creates a GTK+/Cairo window with opaque settings from the png file and the transparent
 portions cut out with a mask. Basic, but works and looks great.
 
@@ -60,7 +60,7 @@ class pngtranswin:
 		self.ctx.rectangle(event.area.x, event.area.y,
 				event.area.width, event.area.height)
 		self.ctx.clip()
-		self.draw_image(self.ctx,430,100,'inkscape-blankon.png')
+		self.draw_image(self.ctx,430,100,'inkscape.png')
 
 	def setup(self):
 		# Set menu background image
@@ -77,13 +77,13 @@ class pngtranswin:
 		self.pixmap = gtk.gdk.Pixmap (None, w, h, 1)
 		ctx = self.pixmap.cairo_create()
 		# todo: modify picture source
-		#self.bgpb = gtk.gdk.pixbuf_new_from_file('inkscape-blankon.png')
+		#self.bgpb = gtk.gdk.pixbuf_new_from_file('inkscape.png')
 		ctx.save()
 		ctx.set_source_rgba(1, 1, 1,0)
 		ctx.set_operator (cairo.OPERATOR_SOURCE)
 		ctx.paint()
 		ctx.restore()
-		self.draw_image(ctx,0,0,'inkscape-blankon.png')
+		self.draw_image(ctx,0,0,'inkscape.png')
 		
 		if self.window.is_composited():
 			ctx.rectangle(0,0,w,h)

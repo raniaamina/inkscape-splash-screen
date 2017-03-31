@@ -3,7 +3,7 @@ import subprocess
 import time
 
 application = "inkscape"
-path = "./inkscape-splash.py"
+path = "/opt/Inksplash/init.py"
 
 subprocess.Popen([application])
 subprocess.Popen(["python3", path])

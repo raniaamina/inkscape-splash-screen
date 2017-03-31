@@ -12,7 +12,7 @@ class Splash(Gtk.Window):
 
         image = Gtk.Image()
         # set the path to the image below
-        image.set_from_file("./inkscape-splash.png")
+        image.set_from_file("/opt/Inksplash/inkscape.png")
         maingrid.attach(image, 1, 0, 1, 1)
 	
 
