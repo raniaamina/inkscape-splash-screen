@@ -1,7 +1,7 @@
 # inkscape-splash-screen
 Inkscape splash screen for BlankOn Linux
 
-##Install
+## Install
 Copy and paste code bellow to your terminal
 ```
 wget https://raw.githubusercontent.com/raniaamina/inkscape-splash-screen/master/install.sh && sudo chmod +x install.sh && sudo ./install.sh
