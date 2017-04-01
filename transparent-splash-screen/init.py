@@ -60,7 +60,7 @@ class pngtranswin:
 		self.ctx.rectangle(event.area.x, event.area.y,
 				event.area.width, event.area.height)
 		self.ctx.clip()
-		self.draw_image(self.ctx,430,100,'inkscape.png')
+		self.draw_image(self.ctx,430,100,'/opt/Inksplash/inkscape.png')
 
 	def setup(self):
 		# Set menu background image
@@ -77,13 +77,13 @@ class pngtranswin:
 		self.pixmap = gtk.gdk.Pixmap (None, w, h, 1)
 		ctx = self.pixmap.cairo_create()
 		# todo: modify picture source
-		#self.bgpb = gtk.gdk.pixbuf_new_from_file('inkscape.png')
+		#self.bgpb = gtk.gdk.pixbuf_new_from_file('/opt/Inksplash/inkscape.png')
 		ctx.save()
 		ctx.set_source_rgba(1, 1, 1,0)
 		ctx.set_operator (cairo.OPERATOR_SOURCE)
 		ctx.paint()
 		ctx.restore()
-		self.draw_image(ctx,0,0,'inkscape.png')
+		self.draw_image(ctx,0,0,'/opt/Inksplash/inkscape.png')
 		
 		if self.window.is_composited():
 			ctx.rectangle(0,0,w,h)
