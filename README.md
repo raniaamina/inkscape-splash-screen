@@ -1,5 +1,5 @@
 # inkscape-splash-screen
-Inkscape splash screen for BlankOn Linux
+Splash screen for the powerfull vector editor, Inkscape.
 
 ## Install
 [This step only for Debian based]
