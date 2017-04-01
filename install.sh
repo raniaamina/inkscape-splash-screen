@@ -15,8 +15,14 @@ do
             echo "Installing dependencies"
 			sudo apt install -y git inkscape python3 wmctrl
 			echo "Copying files"
-			sudo git clone https://github.com/raniaamina/inkscape-splash-screen.git /opt/Inksplash
-			echo "Done!"
+			if ! [ -d /opt/Inksplash ]
+			then
+				sudo git clone https://github.com/raniaamina/inkscape-splash-screen.git /opt/Inksplash
+				echo "Done!"
+			else
+				echo "Sorry, you've already installed this package."
+				echo "Next step is updating current configuration..."
+			fi
             break
             ;;
         "Skip")
@@ -26,7 +32,7 @@ do
   		"Uninstall")
             echo "Uninstall option selected!"
             echo "Unistall Inksplash"
-			sudo sed -i "s/Exec=\python3\ \/opt\/Inksplash\/inksplash.py/Exec=inkscape %F/" /usr/share/applications/inkscape.desktop
+			sudo sed -i "s/Exec=\/opt\/inksplash\/inksplash.py/Exec=inkscape %F/" /usr/share/applications/inkscape.desktop
 			sudo rm -rf /opt/Inksplash
 			echo "done"
             exit
