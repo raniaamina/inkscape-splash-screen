@@ -32,7 +32,7 @@ do
   		"Uninstall")
             echo "Uninstall option selected!"
             echo "Unistall Inksplash"
-			sudo sed -i "s/Exec=\/opt\/inksplash\/inksplash.py/Exec=inkscape %F/" /usr/share/applications/inkscape.desktop
+			sudo sed -i "s/Exec=python3 \/opt\/inksplash\/inksplash.py/Exec=inkscape %F/" /usr/share/applications/inkscape.desktop
 			sudo rm -rf /opt/Inksplash
 			echo "done"
             exit
@@ -51,7 +51,7 @@ do
             echo "Preparing area"
             sudo rm -rf /opt/Inksplash/*.py
 			sudo rm -rf /opt/Inksplash/*.png
-	        sudo sed -i "s/Exec=inkscape %F/Exec=\python3\ \/opt\/Inksplash\/inksplash.py/g" /usr/share/applications/inkscape.desktop
+	        sudo sed -i "s/Exec=inkscape %F/Exec=\python3\ \/opt\/Inksplash\/inksplash.py %F/g" /usr/share/applications/inkscape.desktop
 	        #sudo sed -i "s/TryExec=inkscape/TryExec=\/opt\/Inksplash\/inksplash.py/g" /usr/share/applications/inkscape.desktop
             echo "Copying files"
 	        sudo cp /opt/Inksplash/solid-splash-screen/* /opt/Inksplash/
@@ -63,7 +63,7 @@ do
             echo "Preparing area"
             sudo rm -rf /opt/Inksplash/*.py
             sudo rm -rf /opt/Inksplash/*.png
-            sudo sed -i "s/Exec=inkscape %F/Exec=\python3\ \/opt\/Inksplash\/inksplash.py/g" /usr/share/applications/inkscape.desktop
+            sudo sed -i "s/Exec=inkscape %F/Exec=\python3\ \/opt\/Inksplash\/inksplash.py %F/g" /usr/share/applications/inkscape.desktop
             #sudo sed -i "s/TryExec=inkscape/TryExec=\/opt\/Inksplash\/inksplash.py/g" /usr/share/applications/inkscape.desktop
             echo "Copying files"
             sudo cp /opt/Inksplash/transparent-splash-screen/* /opt/Inksplash/
